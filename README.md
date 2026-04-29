@@ -42,10 +42,12 @@ Datasets 1 to 3 were all attempts to improve the performance of this initial mod
 
 # Final Results
 
-* Model2: 94% Accuracy
-* Model3: 92% Accuracy
-* Model0: 76% Accuracy
-* Model1: 66% Accuracy
+|   | Model  | Accuracy | Precision | Recall   | F1-Score |
+|---|--------|----------|-----------|----------|----------|
+| 2 | Model2 | 0.94     | 0.93617   | 1        | 0.967033 |
+| 3 | Model3 | 0.92     | 0.954545  | 0.954545 | 0.954545 |
+| 0 | Model0 | 0.76     | 0.890244  | 0.829545 | 0.858824 |
+| 1 | Model1 | 0.66     | 0.982143  | 0.625    | 0.763889 |
 
 ## Conclusion
 
