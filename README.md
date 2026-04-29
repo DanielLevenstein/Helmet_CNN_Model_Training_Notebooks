@@ -16,7 +16,7 @@ Datasets
 Streamlit App:
 
 * Created a streamlit app for interactive testing.
-* [DanielLevenstein/Helmet_CNN_Data_Quality_Case_Study](https://huggingface.co/spaces/DanielLevenstein/Helmet_Image_Classification.v2)
+* [DanielLevenstein/Helmet_CNN_Data_Quality_Case_Study](https://huggingface.co/spaces/DanielLevenstein/Helmet_Image_Classification)
 
 Preprocessing
 
