@@ -1,9 +1,9 @@
-Project: Model Cross Data Validation Purpose
+# Project: Model Cross-Data Validation Purpose
 
 * Compare the performance of four helmet-detection CNNs trained on different datasets using holdout data from the second two datasets for testing.
 * Demonstrate how dataset quality and preprocessing choices affect final model performance.
 
-Datasets
+## Datasets
 
 | Dataset  | Source                                                                                                                          | Datasets Type  | Author             | Samples Used | Model Accuracy |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------ | ------------ |----------------|
