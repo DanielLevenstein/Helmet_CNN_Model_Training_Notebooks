@@ -1,0 +1,14 @@
+tensorflow~=2.21.0
+numpy~=2.4.3
+pandas~=2.3.3
+seaborn~=0.13.2
+matplotlib~=3.10.8
+opencv-python~=4.13.0.92
+keras~=3.13.2
+scikit-learn~=1.8.0
+protobuf~=6.33.5
+streamlit~=1.55.0
+requests~=2.32.5
+pillow~=12.1.1
+huggingface-hub~=1.6.0
+kaggle~=2.0.0
