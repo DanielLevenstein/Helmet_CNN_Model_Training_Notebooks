@@ -5,9 +5,10 @@
 
 ## Datasets
 
+
 | Dataset  | Source                                                                                                                          | Datasets Type  | Author             | Samples Used | Model Accuracy |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------ | ------------ |----------------|
-| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | -                  | ~600         | 76%            | 
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------ | ------------ | -------------- |
+| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | -                  | ~600         | 76%            |
 | Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | Rajeevsekar21      | ~500         | 66%            |
 | Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | Larxel (andrewmvd) | ~250         | 94%            |
 | Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | Larxel (andrewmvd) | ~2725        | 92%            |
@@ -15,8 +16,8 @@
 ## Streamlit App
 
 This streamlit app was inspired by a model I build for a school project at UT that performed really well on training data but poorly on real world data.
-Datasets 1 to 3 were all attempts to improve the performance of this initial model. I have since moved the cross-model validation out of my streamlit app an into a standalone validation notebook which is uploaded to GitHub.
-[Live Demo](https://huggingface.co/spaces/DanielLevenstein/Helmet_Image_Classification.v2)
+Datasets 1 to 3 were all attempts to improve the performance of this initial model. I have since moved the cross-model validation out of my streamlit app and into a standalone validation notebook which is uploaded to GitHub.
+[Live Demo](https://huggingface.co/spaces/DanielLevenstein/Helmet_Image_Classification)
 
 ## Preprocessing
 
@@ -42,8 +43,9 @@ Datasets 1 to 3 were all attempts to improve the performance of this initial mod
 
 # Final Results
 
+
 |   | Model  | Accuracy | Precision | Recall   | F1-Score |
-|---|--------|----------|-----------|----------|----------|
+| - | ------ | -------- | --------- | -------- | -------- |
 | 2 | Model2 | 0.94     | 0.93617   | 1        | 0.967033 |
 | 3 | Model3 | 0.92     | 0.954545  | 0.954545 | 0.954545 |
 | 0 | Model0 | 0.76     | 0.890244  | 0.829545 | 0.858824 |
@@ -51,11 +53,12 @@ Datasets 1 to 3 were all attempts to improve the performance of this initial mod
 
 ## Conclusion
 
-The performance of Model2 and Model3 are close with Model2 performing slightly better on the final validation set. This is a bit surprising as Model3 was a significantly bigger dataset, but when looking through the image manually, I saw a lot of inverted or mirrored images in the dataset so that could have contributed to the worse performance. Given the small size of the validation set, it's important not to read too much into the these results.
+The performance of Model2 and Model3 are close with Model2 performing slightly better on the final validation set.
 
-One surprising finding is after the validation data was normalized, my initial Model0 is now performing better than Model1 which was unexpected given that all the no helmet examples from that training set were super close-up face shots. I legitimately thought that the model couldn't have successfully learned anything useful given the constraints on its initial training data.
+Model3 was a significantly bigger dataset, but contained a lot of inverted or mirrored images. This might have contributed to the worse performance. Also most of the no-helmet samples in Dataset3 were managers so it is possible the model learned to attribute nicer clothing to that class. Given the small size of the validation set, it's important not to read too much into the these results.
 
-Model1 performing poorly wasn't surprising given the fact that the pictures in that dataset consisted of only two individuals and were taken by hand.
+After the validation data was normalized, the performance of Model0 improved enough surpassed Model1 on all metrics. This was surprising given how limited the no-helmet class was in this dataset. Model1 consisted of only two individuals and were taken by hand but on initial inspection still felt like a higher quality dataset than Dataset0.
+
 
 ### Notes
 
