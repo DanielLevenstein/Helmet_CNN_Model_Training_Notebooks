@@ -38,7 +38,7 @@ Datasets 1 to 3 were all attempts to improve the performance of this initial mod
 
 ### Data Leakage
 
-* To prevent data leakage, the dataset directories are being wiped clean between runs so training data can't accidently end up in the final testing dataset.
+* To prevent data leakage, the dataset directories are being wiped clean between runs so training data can't accidentally end up in the final testing dataset.
 
 # Final Results
 
