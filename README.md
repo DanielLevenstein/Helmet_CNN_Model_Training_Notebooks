@@ -16,11 +16,11 @@
 
 
 | Dataset  | Source                                                                                                                          | Datasets Type  | Author             | Samples Used | Model Accuracy |
-|----------|---------------------------------------------------------------------------------------------------------------------------------|----------------|--------------------|--------------|----------------|
-| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | -                  | ~600         | 76%            | 
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------ | ------------ | -------------- |
+| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | -                  | ~600         | 76%            |
 | Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | Rajeevsekar21      | ~500         | 66%            |
 | Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | Larxel (andrewmvd) | ~250         | 94%            |
-| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | Larxel (andrewmvd) | ~2725        | 92%            |
+| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | Larxel (andrewmvd) | ~3000        | 92%            |
 
 ## Streamlit App
 
@@ -54,12 +54,12 @@ This streamlit app was inspired by a model I built for a school project at UT th
 # Final Results
 
 
-|   | Model  | Accuracy | Precision | Recall   | F1-Score |
-| - | ------ | -------- | --------- | -------- | -------- |
-| 2 | Model2 | 0.94     | 0.93617   | 1        | 0.967033 |
-| 3 | Model3 | 0.92     | 0.954545  | 0.954545 | 0.954545 |
-| 0 | Model0 | 0.76     | 0.890244  | 0.829545 | 0.858824 |
-| 1 | Model1 | 0.66     | 0.982143  | 0.625    | 0.763889 |
+|   | Model  | Accuracy | 
+|---|--------|----------| 
+| 2 | Model2 | 0.92     | 
+| 3 | Model3 | 0.91     |
+| 0 | Model0 | 0.76     | 
+| 1 | Model1 | 0.74     |
 
 ## Conclusion
 
