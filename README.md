@@ -79,13 +79,12 @@ This streamlit app was inspired by a model I built for a school project at UT th
 
 # Final Results
 
-
-| Model  | Accuracy | Precision |   Recall | F1-Score |
-| :----- | -------: | --------: | -------: | -------: |
-| Model2 |     0.94 |   0.93617 |        1 | 0.967033 |
-| Model3 |     0.91 |  0.954023 | 0.943182 | 0.948571 |
-| Model0 |     0.76 |  0.890244 | 0.829545 | 0.858824 |
-| Model1 |     0.74 |  0.984375 | 0.715909 | 0.828947 |
+| Model   |   Accuracy |   Precision |   Recall |   F1-Score |
+|:--------|-----------:|------------:|---------:|-----------:|
+| Model3  |       0.91 |    0.954023 | 0.943182 |   0.948571 |
+| Model2  |       0.94 |    0.93617  | 1        |   0.967033 |
+| Model0  |       0.76 |    0.890244 | 0.829545 |   0.858824 |
+| Model1  |       0.74 |    0.984375 | 0.715909 |   0.828947 |
 
 ## Conclusion
 
