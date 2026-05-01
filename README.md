@@ -1,3 +1,11 @@
+---
+name: Helmet Detection Cross-Data Validation
+summary: Compare generalization of four CNNs trained on different helmet/hard-hat datasets using holdout data from two bounding-box datasets; demonstrate effects of dataset quality and preprocessing on model performance.
+description: Four CNN classifiers trained separately on Dataset0 (classification), Dataset1 (classification), Dataset2 (bounding-box → crops), and Dataset3 (bounding-box → crops). Models evaluated on holdout sets from Dataset2 and Dataset3 to measure cross-dataset generalization. Preprocessing included resizing classification images to 200x200 and cropping bounding-box features to 100x100 after removing features smaller than 50x50.
+license: gfdl
+language:
+- en
+---
 # Project: Model Cross-Data Validation Purpose
 
 * Compare the performance of four helmet-detection CNNs trained on different datasets using holdout data from the second two datasets for testing.
@@ -5,22 +13,26 @@
 
 ## Datasets
 
-* Dataset0: This dataset is focused on workplace helmet detection, primarily using database images of workers. The "no
+In this project each of the four models was trained off an initial dataset, and the result of each model was tested on a cross validation dataset with holdout data from Dataset2, and Dataset3.
+
+| Dataset  | Source                                                                                                                          | Datasets Type  | Samples Used | Model Accuracy |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------ | -------------- |
+| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | ~600         | 76%            |
+| Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | ~500         | 66%            |
+| Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | ~250         | 94%            |
+| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | ~3000        | 92%            |
+
+**This table shows the source of each dataset used the dataset type and the number of sample features used after preprocessing.**
+**Model Accuracy was calculated based on a holdout dataset from Dataset2, and Dataset3.**
+
+* [Dataset0](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/): This dataset is focused on workplace helmet detection, primarily using database images of workers. The "no
   helmet" class includes close-up face pictures of individuals without helmets.
-* Dataset1: A collection of images of motorcycle helmets that were manually captured by a college student using a
+* [Dataset1](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset): A collection of images of motorcycle helmets that were manually captured by a college student using a
   consistent camera angle and lighting condition.
-* Dataset2: A bounding box dataset designed for detecting helmets on motorcycles in traffic scenarios, emphasizing
+* [Dataset2](https://www.kaggle.com/datasets/andrewmvd/helmet-detection): A bounding box dataset designed for detecting helmets on motorcycles in traffic scenarios, emphasizing
   varied environments and perspectives.
-* Dataset3: This is a bounding box dataset developed for detecting workplace hardhats. It includes diverse workplace
+* [Dataset3](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection): This is a bounding box dataset developed for detecting workplace hardhats. It includes diverse workplace
   scenarios and different wearer types to improve detection robustness.
-
-
-| Dataset  | Source                                                                                                                          | Datasets Type  | Author             | Samples Used | Model Accuracy |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------------ | ------------ | -------------- |
-| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | -                  | ~600         | 76%            |
-| Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | Rajeevsekar21      | ~500         | 66%            |
-| Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | Larxel (andrewmvd) | ~250         | 94%            |
-| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | Larxel (andrewmvd) | ~3000        | 92%            |
 
 ## Streamlit App
 
@@ -53,12 +65,13 @@ This streamlit app was inspired by a model I built for a school project at UT th
 
 # Final Results
 
-| Model   |   Accuracy |   Precision |   Recall |   F1-Score |
-|:--------|-----------:|------------:|---------:|-----------:|
-| Model2  |       0.94 |    0.93617  | 1        |   0.967033 |
-| Model3  |       0.91 |    0.954023 | 0.943182 |   0.948571 |
-| Model0  |       0.76 |    0.890244 | 0.829545 |   0.858824 |
-| Model1  |       0.74 |    0.984375 | 0.715909 |   0.828947 |
+
+| Model  | Accuracy | Precision |   Recall | F1-Score |
+| :----- | -------: | --------: | -------: | -------: |
+| Model2 |     0.94 |   0.93617 |        1 | 0.967033 |
+| Model3 |     0.91 |  0.954023 | 0.943182 | 0.948571 |
+| Model0 |     0.76 |  0.890244 | 0.829545 | 0.858824 |
+| Model1 |     0.74 |  0.984375 | 0.715909 | 0.828947 |
 
 ## Conclusion
 
@@ -78,12 +91,4 @@ internal UT project, whereas Datasets1 through Dataset3 were publicly available 
 across datasets were key to reducing input-size variation and isolating dataset-quality effects.
 
 It's worth noting that a difference in performance of less than 2% percentage points on the small validation dataset
-should be disregarded for conclusive claims.
-
-### Expanded Observations
-
-* Consistent preprocessing, including standardized resizing and cropping, was essential for fair performance
-  evaluations.
-* The small validation sample size limits statistical significance, so results should be interpreted cautiously.
-* Future improvements could include expanding the validation set and increasing the diversity of no-helmet samples in
-  smaller datasets to improve real-world inference reliability.
+should be disregarded for conclusive claims. In addition standardization of image size and removal of low quality features had an effect on the final results.
