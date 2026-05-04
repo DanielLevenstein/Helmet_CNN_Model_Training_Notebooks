@@ -15,10 +15,10 @@ license: gfdl
 language:
 - en
 metrics:
-- accuracy 91
+- accuracy 93
 - precision 95
-- recall 94
-- f1 94
+- recall 96
+- f1 96
 ---
 # Project: Model Cross-Data Validation Purpose
 
@@ -27,33 +27,29 @@ metrics:
 
 ## Datasets
 
-In this project each of the four models was trained off an initial dataset, and the result of each model was tested on a cross validation dataset with holdout data from Dataset2, and Dataset3.
+In this project each of the four models was trained off an initial dataset, and the result of each model was tested on a cross-validation dataset with holdout data from Dataset2, and Dataset3.
 
-
+Training notebooks: [Helmet_CNN_Model_Training_Notebooks](https://github.com/DanielLevenstein/Helmet_CNN_Model_Training_Notebooks)
 | Dataset  | Source                                                                                                                          | Datasets Type  | Samples Used | Model Accuracy |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------- | ------------ | -------------- |
-| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | ~600         | 76%            |
-| Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | ~500         | 66%            |
-| Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | ~250         | 94%            |
-| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | ~3000        | 92%            |
+| Dataset0 | Great Learning:[HelmNet_ImageProcessing_Notebook](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/)  | Classification | ~600         | ~76%           |
+| Dataset1 | Kaggle:[on-vehicle-helmet-detection-dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset) | Classification | ~500         | ~70%           |
+| Dataset2 | Kaggle:[helmet-detection](https://www.kaggle.com/datasets/andrewmvd/helmet-detection)                                           | Bounding Boxes | ~250         | ~93%           |
+| Dataset3 | Kaggle:[hard-hat-detection](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection)                                       | Bounding Boxes | ~3000        | ~93%           |
 
 **This table shows the source of each dataset used the dataset type and the number of sample features used after preprocessing.**
 **Model Accuracy was calculated based on a holdout dataset from Dataset2, and Dataset3.**
-
-* [Dataset0](https://github.com/DanielLevenstein/HelmNet_ImageProcessing_UT_ML_Project6/): This dataset is focused on workplace helmet detection, primarily using database images of workers. The "no
-  helmet" class includes close-up face pictures of individuals without helmets.
-* [Dataset1](https://www.kaggle.com/datasets/rajeevsekar21/on-vehicle-helmet-detection-dataset): A collection of images of motorcycle helmets that were manually captured by a college student using a
-  consistent camera angle and lighting condition.
-* [Dataset2](https://www.kaggle.com/datasets/andrewmvd/helmet-detection): A bounding box dataset designed for detecting helmets on motorcycles in traffic scenarios, emphasizing
-  varied environments and perspectives.
-* [Dataset3](https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection): This is a bounding box dataset developed for detecting workplace hardhats. It includes diverse workplace
-  scenarios and different wearer types to improve detection robustness.
 
 ## Streamlit App
 
 This streamlit app was inspired by a model I built for a school project at UT that performed really well on training data but poorly on real-world data.
 
 [Live Streamlit Demo](https://huggingface.co/spaces/DanielLevenstein/Helmet_Image_Classification)
+
+### Model Parameters
+Model0 and Model1 both take a 200x200 image as their input image, and model2 and model3 take a 100x100 input image.
+Because these datasets were generated differently, they aren't directly comparable.
+ Uploaded images are resized prior to evaluation. 
 
 ## Preprocessing
 
@@ -97,12 +93,12 @@ Both of these results can be explained by differences in the quality of the data
 
 ## Cross-Validation Results
 
-| Model   | Accuracy |   Precision |   Recall |   F1-Score |
-|:--------|---------:|------------:|---------:|-----------:|
-| Model3  |     0.93 |    0.955056 | 0.965909 |   0.960452 |
-| Model2  |     0.93 |    0.926316 | 1.000000 |   0.961749 |
-| Model1  |     0.70 |    0.983333 | 0.670455 |   0.797297 |
-| Model0  |     0.76 |    0.890244 | 0.829545 |   0.858824 |
+| Model  | Accuracy | Precision |   Recall | F1-Score |
+| :----- | -------: | --------: | -------: | -------: |
+| Model3 |     0.93 |  0.955056 | 0.965909 | 0.960452 |
+| Model2 |     0.93 |  0.926316 | 1.000000 | 0.961749 |
+| Model1 |     0.70 |  0.983333 | 0.670455 | 0.797297 |
+| Model0 |     0.76 |  0.890244 | 0.829545 | 0.858824 |
 
 ## Conclusion
 
