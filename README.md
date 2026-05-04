@@ -1,9 +1,4 @@
----
-name: Helmet Detection Cross-Data Validation
-summary: >-
-  Compare generalization of four CNNs trained on different helmet/hard-hat
-  datasets using holdout data from two bounding-box datasets; demonstrate
-  effects of dataset quality and preprocessing on model performance.
+
 description: >-
   Four CNN classifiers trained separately on Dataset0 (classification), Dataset1
   (classification), Dataset2 (bounding-box → crops), and Dataset3 (bounding-box
@@ -11,15 +6,7 @@ description: >-
   measure cross-dataset generalization. Preprocessing included resizing
   classification images to 200x200 and cropping bounding-box features to 100x100
   after removing features smaller than 50x50.
-license: gfdl
-language:
-- en
-metrics:
-- accuracy 93
-- precision 95
-- recall 96
-- f1 96
----
+
 # Project: Model Cross-Data Validation Purpose
 
 * Compare the performance of four helmet-detection CNNs trained on different datasets using holdout data from the second two datasets for testing.
