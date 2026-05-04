@@ -2,4 +2,4 @@ hf upload DanielLevenstein/HelmNet_Image_Classification model/HelmNet_Image_Clas
 hf upload DanielLevenstein/HelmNet_Image_Classification model/HelmNet_Image_Classification.v2.h5
 hf upload DanielLevenstein/HelmNet_Image_Classification model/HelmNet_Image_Classification.v2.h5
 hf upload DanielLevenstein/HelmNet_Image_Classification model/HelmNet_Image_Classification.v3.h5
-hf upload DanielLevenstein/HelmNet_Image_Classification README.md
+hf upload DanielLevenstein/HelmNet_Image_Classification validation_results.md
