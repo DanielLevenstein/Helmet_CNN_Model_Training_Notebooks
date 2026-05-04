@@ -87,8 +87,10 @@ Both of these results can be explained by differences in the quality of the data
 ## Misclassified Images
 
 - Dataset2 misclassified images involving individuals wearing headcoverings as containing helmets when they did not.
+
   ![Model 2 Misclassified Images](charts/model2_misclassified_images_crop.png)
 - Dataset3 misclassified images include images which included helmets in the background.
+
   ![Model 3 Misclassified Images](charts/model3_misclassified_images_crop.png)
 
 ## Cross-Validation Results
