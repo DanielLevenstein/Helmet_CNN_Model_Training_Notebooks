@@ -1,5 +1,5 @@
 
-description: >-
+## Description: 
   Four CNN classifiers trained separately on Dataset0 (classification), Dataset1
   (classification), Dataset2 (bounding-box → crops), and Dataset3 (bounding-box
   → crops). Models evaluated on holdout sets from Dataset2 and Dataset3 to
