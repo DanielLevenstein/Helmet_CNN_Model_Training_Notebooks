@@ -1,4 +1,4 @@
-tensorflow~=2.21.0
+tensorflow
 numpy~=2.4.3
 pandas~=2.3.3
 seaborn~=0.13.2
